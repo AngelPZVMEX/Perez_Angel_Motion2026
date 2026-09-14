@@ -16,7 +16,7 @@ public class vectorMath : MonoBehaviour
         DrawSquare(currentMousePosition, 5, Color.red, 0.5f);
     }
 
-    float GetMag(Vector2 vector)
+    public static float GetMag(Vector2 vector)
     {
         return Mathf.Sqrt(vector.x * vector.x + vector.y * vector.y);
             
@@ -51,6 +51,15 @@ public class vectorMath : MonoBehaviour
 
 
 
+    }
+
+    public static Vector2 GetNormalizedVector (Vector2 vector)
+    {
+
+        float sizeOfVector = GetMag(vector);
+        Vector2 normalizedvector = new Vector2(vector.x, vector.y) / sizeOfVector;
+
+        return normalizedvector;
     }
 }
 
